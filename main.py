@@ -1,6 +1,6 @@
 import discord, config
 import bot_tools as tools
-from aiohttp import connector
+# from aiohttp import connector
 
 intents = discord.Intents.default()
 intents.message_content = True # required for on_message event

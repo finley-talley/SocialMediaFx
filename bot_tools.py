@@ -19,5 +19,4 @@ def change_to_vx(domain, urls, social):
     social = social_key[social]
     for i, url in enumerate(urls):
         urls[i] = url.replace(domain, f'https://{social}.com')
-    print(f'urls:\t{urls}')
     return urls
