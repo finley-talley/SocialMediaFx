@@ -13,11 +13,10 @@ def get_urls(msg, ind):
     urls = []
     for i in ind:
         urls.append(msg[i:].split()[0])
-    print(f'urls:\t{urls}')
     return urls
 
 def change_to_vx(domain, urls, social):
-    social = "vxtwitter" if social == "twt" else "ddinstagram"
+    social = social_key[social]
     for i, url in enumerate(urls):
         urls[i] = url.replace(domain, f'https://{social}.com')
     print(f'urls:\t{urls}')

@@ -19,19 +19,22 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    # if message.content.startswith('$hello'):
+    #     await message.channel.send('Hello!')
 
     if 'https://twitter.com' in message.content:
-        await message.channel.send('twitter link detected')        
+        await message.edit(suppress=True)
+        ind = tools.find_url_index('https://twitter.com', message.content)
+        urls = tools.get_urls(message.content, ind)
+        urls = tools.change_to_vx('https://twitter.com', urls, 'twt')
+        await message.channel.send('\n'.join(urls))
 
     if 'https://x.com' in message.content:
         await message.edit(suppress=True)
-        await message.channel.send('x link detected')
         ind = tools.find_url_index('https://x.com', message.content)
-        print(f'ind:\t{ind}')
         urls = tools.get_urls(message.content, ind)
         urls = tools.change_to_vx('https://x.com', urls, 'twt')
+        await message.channel.send('\n'.join(urls))
 
 # try:
 #     client.run(config.dsc_token)
