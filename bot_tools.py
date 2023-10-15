@@ -2,8 +2,8 @@ import re
 
 social_key = {
     'twt': 'vxtwitter',
-    'ig': 'ddinstagram',
-    'tt': 'vxtiktok'
+    'ig': 'www.ddinstagram',
+    'tt': 'www.vxtiktok'
 }
 
 def find_url_index(url, str):

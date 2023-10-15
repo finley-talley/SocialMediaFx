@@ -31,18 +31,18 @@ async def on_message(message):
         urls = tools.change_to_vx('https://x.com', urls, 'twt')
         await message.channel.send('\n'.join(urls))
 
-    if 'https://tiktok.com' in message.content:
+    if 'https://www.tiktok.com' in message.content:
         await message.edit(suppress=True)
-        ind = tools.find_url_index('https://tiktok.com', message.content)
+        ind = tools.find_url_index('https://www.tiktok.com', message.content)
         urls = tools.get_urls(message.content, ind)
-        urls = tools.change_to_vx('https://tiktok.com', urls, 'tt')
+        urls = tools.change_to_vx('https://www.tiktok.com', urls, 'tt')
         await message.channel.send('\n'.join(urls))
 
-    if 'https://instagram.com' in message.content:
+    if 'https://www.instagram.com' in message.content:
         await message.edit(suppress=True)
-        ind = tools.find_url_index('https://instagram.com', message.content)
+        ind = tools.find_url_index('https://www.instagram.com', message.content)
         urls = tools.get_urls(message.content, ind)
-        urls = tools.change_to_vx('https://instagram.com', urls, 'ig')
+        urls = tools.change_to_vx('https://www.instagram.com', urls, 'ig')
         await message.channel.send('\n'.join(urls))
 
 # try:
