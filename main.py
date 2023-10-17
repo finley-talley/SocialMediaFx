@@ -7,7 +7,6 @@ intents = discord.Intents.default()
 intents.message_content = True # required for on_message event
 bot = commands.Bot(command_prefix='!', intents=intents)
 bot.remove_command('help')
-# client = discord.Client(intents=intents)
 
 def is_me(m):
     return m.author == bot.user
