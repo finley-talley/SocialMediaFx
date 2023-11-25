@@ -22,6 +22,7 @@ async def help(ctx): # how to use bot
                     "2. instagram.com\n" + \
                     "3. x.com\n" + \
                     "4. twitter.com\n" + \
+                    "5. pixiv.com\n" + \
                     "They can be embedded among text in the message or be its own message." + \
                     "\n**If you need to delete a message from the bot, type !delete to get rid of the last message "+ \
                     "from the bot. Right now the bot doesn't recognize a hidden link using <> as one that you "+ \
@@ -65,6 +66,12 @@ async def on_message(message):
         urls = tools.change_to_vx('https://www.instagram.com', urls, 'ig')
         await message.channel.send('\n'.join(urls))
 
+    if 'https://www.pixiv.net' in message.content:
+        await message.edit(suppress=True)
+        ind = tools.find_url_index('https://www.pixiv.net', message.content)
+        urls = tools.get_urls(message.content, ind)
+        urls = tools.change_to_vx('https://www.pixiv.net', urls, 'px')
+        await message.channel.send('\n'.join(urls))
     await bot.process_commands(message)
 
 # try:

@@ -3,7 +3,8 @@ import re
 social_key = {
     'twt': 'vxtwitter',
     'ig': 'www.ddinstagram',
-    'tt': 'www.vxtiktok'
+    'tt': 'www.vxtiktok',
+    'px': 'www.phixiv'
 }
 
 def find_url_index(url, str):
@@ -16,7 +17,11 @@ def get_urls(msg, ind):
     return urls
 
 def change_to_vx(domain, urls, social):
+    if social == 'px': tld = 'net'
+    else: tld = 'com'
+        
     social = social_key[social]
+
     for i, url in enumerate(urls):
-        urls[i] = url.replace(domain, f'https://{social}.com')
+        urls[i] = url.replace(domain, f'https://{social}.{tld}')
     return urls
