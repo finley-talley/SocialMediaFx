@@ -1,7 +1,7 @@
 import re
 
 social_key = {
-    'twt': 'vxtwitter',
+    'twt': 'fxtwitter',
     'ig': 'www.ddinstagram',
     'tt': 'www.vxtiktok',
     'px': 'www.phixiv'
