@@ -18,7 +18,7 @@ def get_urls(msg, ind):
         prev_char = msg[i-1]
         last_char = cur_link[cl_len-1]
         # suppress manually hidden preview links
-        if not (i != 0 and prev_char == '<' and last_char == '>'):
+        if not (i != 0 and ((prev_char == '<' and last_char == '>') or (prev_char == '|' and last_char == '|'))):
             urls.append(cur_link)
     return urls
 
