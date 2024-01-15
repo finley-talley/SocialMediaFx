@@ -43,35 +43,36 @@ async def on_message(message):
         ind = tools.find_url_index('https://twitter.com', message.content)
         urls = tools.get_urls(message.content, ind)
         urls = tools.change_to_vx('https://twitter.com', urls, 'twt')
-        await message.channel.send('\n'.join(urls))
+        await message.channel.send(tools.join_urls(urls))
 
     if 'https://x.com' in message.content:
         await message.edit(suppress=True)
         ind = tools.find_url_index('https://x.com', message.content)
         urls = tools.get_urls(message.content, ind)
         urls = tools.change_to_vx('https://x.com', urls, 'twt')
-        await message.channel.send('\n'.join(urls))
+        await message.channel.send(tools.join_urls(urls))
 
     if 'https://www.tiktok.com' in message.content:
         await message.edit(suppress=True)
         ind = tools.find_url_index('https://www.tiktok.com', message.content)
         urls = tools.get_urls(message.content, ind)
         urls = tools.change_to_vx('https://www.tiktok.com', urls, 'tt')
-        await message.channel.send('\n'.join(urls))
+        await message.channel.send(tools.join_urls(urls))
 
     if 'https://www.instagram.com' in message.content:
         await message.edit(suppress=True)
         ind = tools.find_url_index('https://www.instagram.com', message.content)
         urls = tools.get_urls(message.content, ind)
         urls = tools.change_to_vx('https://www.instagram.com', urls, 'ig')
-        await message.channel.send('\n'.join(urls))
+        await message.channel.send(tools.join_urls(urls))
 
     if 'https://www.pixiv.net' in message.content:
         await message.edit(suppress=True)
         ind = tools.find_url_index('https://www.pixiv.net', message.content)
         urls = tools.get_urls(message.content, ind)
         urls = tools.change_to_vx('https://www.pixiv.net', urls, 'px')
-        await message.channel.send('\n'.join(urls))
+        await message.channel.send(tools.join_urls(urls))
+        
     await bot.process_commands(message)
 
 # try:

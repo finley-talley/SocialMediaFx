@@ -25,3 +25,10 @@ def change_to_vx(domain, urls, social):
     for i, url in enumerate(urls):
         urls[i] = url.replace(domain, f'https://{social}.{tld}')
     return urls
+
+def join_urls(urls):
+    link_start = '[(link)]('
+    link_join = ') [(link)]('
+    link_end = ')'
+    final_link = link_start + link_join.join(urls) + link_end
+    return final_link
