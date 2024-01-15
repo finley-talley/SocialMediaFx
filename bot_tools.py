@@ -13,7 +13,13 @@ def find_url_index(url, str):
 def get_urls(msg, ind):
     urls = []
     for i in ind:
-        urls.append(msg[i:].split()[0])
+        cur_link = msg[i:].split()[0]
+        cl_len = len(cur_link)
+        prev_char = msg[i-1]
+        last_char = cur_link[cl_len-1]
+        # suppress manually hidden preview links
+        if not (i != 0 and prev_char == '<' and last_char == '>'):
+            urls.append(cur_link)
     return urls
 
 def change_to_vx(domain, urls, social):
